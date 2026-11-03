@@ -29,6 +29,25 @@ There are two different paths:
    name, icon, provider ids, and localized summaries. This is a separate review,
    not required for the GitHub listing above.
 
+The curated registry consumes npm package names. Publishing there therefore
+needs an npm release as well as the GitHub repository. A suitable entry shape is:
+
+```json
+{
+  "package": "magpie-deepseek-files",
+  "name": "DeepSeek Files",
+  "icon": "https://raw.githubusercontent.com/harlan-zhang/magpie-deepseek-files/main/admin/icon.svg",
+  "providers": ["deepseek-files"],
+  "summary": {
+    "en": "DeepSeek Responses images are uploaded through the Files API and referenced by file_id, with a local image management page.",
+    "zh": "通过 Files API 上传 DeepSeek Responses 图片并使用 file_id 引用，附带本地图片管理页。"
+  }
+}
+```
+
+This repository is currently published through the GitHub topic path, not the
+curated npm registry.
+
 For the GitHub path, the installable spec is:
 
 ```text
