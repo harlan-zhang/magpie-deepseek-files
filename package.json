@@ -2,6 +2,14 @@
   "name": "magpie-deepseek-files",
   "version": "0.2.0",
   "description": "Magpie provider that externalizes DeepSeek Responses images through the Files API.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harlan-zhang/magpie-deepseek-files.git"
+  },
+  "homepage": "https://github.com/harlan-zhang/magpie-deepseek-files#readme",
+  "bugs": {
+    "url": "https://github.com/harlan-zhang/magpie-deepseek-files/issues"
+  },
   "type": "module",
   "main": "./index.mjs",
   "exports": {

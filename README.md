@@ -21,6 +21,16 @@ The original `deepseek` provider is left untouched.
 ## Install
 
 ```sh
+magpie plugin add github:harlan-zhang/magpie-deepseek-files
+magpie plugin login deepseek-files
+magpie provider test deepseek-files
+magpie codex deepseek-files/deepseek-flash
+magpie sync
+```
+
+From a local checkout:
+
+```sh
 magpie plugin add /path/to/magpie-deepseek-files
 magpie plugin login deepseek-files
 magpie provider test deepseek-files

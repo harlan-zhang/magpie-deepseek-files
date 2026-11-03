@@ -6,7 +6,7 @@ The repository must be public and keep `package.json` at its root. Magpie
 installs GitHub plugins from the repository's current code:
 
 ```sh
-magpie plugin add github:<owner>/magpie-deepseek-files
+magpie plugin add github:harlan-zhang/magpie-deepseek-files
 ```
 
 Recommended repository metadata:
@@ -32,7 +32,7 @@ There are two different paths:
 For the GitHub path, the installable spec is:
 
 ```text
-github:<owner>/magpie-deepseek-files
+github:harlan-zhang/magpie-deepseek-files
 ```
 
 Magpie does not publish the repository for you. The repository must first be
