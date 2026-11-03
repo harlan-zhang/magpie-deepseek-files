@@ -1,0 +1,54 @@
+{
+  "name": "magpie-deepseek-files",
+  "version": "0.2.0",
+  "description": "Magpie provider that externalizes DeepSeek Responses images through the Files API.",
+  "type": "module",
+  "main": "./index.mjs",
+  "exports": {
+    ".": "./index.mjs"
+  },
+  "files": [
+    "index.mjs",
+    "lib/",
+    "admin/",
+    "page/",
+    "README.md"
+  ],
+  "scripts": {
+    "check": "node --check index.mjs && node --check lib/cache.mjs && node --check lib/data-url.mjs && node --check lib/media.mjs && node --check lib/status.mjs && node --check lib/admin-server.mjs && node --check lib/transform.mjs && node --check lib/upload.mjs && node --check admin/app.js && node --check page/boot-v3.js",
+    "test": "node --test"
+  },
+  "keywords": [
+    "magpie",
+    "magpie-plugin",
+    "opencode",
+    "opencode-plugin",
+    "deepseek",
+    "files-api",
+    "images"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT",
+  "magpie": {
+    "maxConcurrency": 4,
+    "page": {
+      "title": "DeepSeek Files",
+      "titles": {
+        "zh": "DeepSeek 图片",
+        "zh-TW": "DeepSeek 圖片",
+        "ja": "DeepSeek 画像"
+      },
+      "file": "page/index-v3.html",
+      "icon": "admin/icon.svg",
+      "service": {
+        "port": 3486,
+        "option": "port"
+      }
+    },
+    "options": {
+      "port": 3486
+    }
+  }
+}

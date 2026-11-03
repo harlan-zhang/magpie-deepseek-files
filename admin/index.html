@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DeepSeek 图片</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body data-token="__DEEPSEEK_FILES_TOKEN__">
+  <header class="topbar">
+    <div class="brand">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="28" height="28">
+          <rect width="32" height="32" rx="9" fill="#00428c"/>
+          <circle cx="16" cy="15" r="6" fill="none" stroke="#fff100" stroke-width="2"/>
+          <path d="M11 22l10-14" stroke="#fff" stroke-width="1.5"/>
+        </svg>
+      </span>
+      <div>
+        <h1>DeepSeek 图片</h1>
+        <p>查看、上传和删除经过 Files API 外置的图片</p>
+      </div>
+    </div>
+    <div class="top-actions">
+      <span class="status-dot" id="active-dot"></span>
+      <span id="active-label">检查中…</span>
+      <button class="button ghost" id="refresh" type="button">刷新</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="status-summary" id="stats" aria-label="插件状态">
+      <div class="summary-primary">
+        <span class="summary-label">插件状态</span>
+        <strong id="stat-active">检查中</strong>
+        <small id="stat-version"></small>
+      </div>
+      <div class="summary-rule" aria-hidden="true"></div>
+      <div class="summary-item">
+        <span>DeepSeek</span>
+        <strong id="stat-auth">检查中</strong>
+        <small id="stat-account"></small>
+      </div>
+      <div class="summary-item">
+        <span>已记录图片</span>
+        <strong id="stat-count">–</strong>
+        <small id="stat-local"></small>
+      </div>
+      <div class="summary-item">
+        <span>总大小</span>
+        <strong id="stat-size">–</strong>
+        <small>Files API</small>
+      </div>
+    </section>
+
+    <details class="last" id="last-request">
+      <summary class="last-summary">
+        <div>
+          <h2>最近一次图片请求</h2>
+          <span id="last-time" class="muted">暂无记录</span>
+        </div>
+        <span class="last-chevron" aria-hidden="true">+</span>
+      </summary>
+      <div class="last-grid" id="last-grid">
+        <div><span>图片</span><strong>–</strong></div>
+        <div><span>唯一图片</span><strong>–</strong></div>
+        <div><span>本次上传</span><strong>–</strong></div>
+        <div><span>缓存命中</span><strong>–</strong></div>
+        <div><span>请求体</span><strong>–</strong></div>
+        <div><span>外置后</span><strong>–</strong></div>
+      </div>
+    </details>
+
+    <section class="workspace">
+      <div class="section-head">
+        <div>
+          <h2>图片清单</h2>
+          <p class="muted">删除会同时删除 DeepSeek 上的文件和本地缓存；历史对话下次会重新上传。</p>
+        </div>
+        <div class="toolbar">
+          <label class="search">
+            <span aria-hidden="true">⌕</span>
+            <input id="search" type="search" placeholder="搜索 hash 或 file id" autocomplete="off">
+          </label>
+          <button class="button primary" id="pick" type="button">上传图片</button>
+          <input id="file" type="file" accept="image/jpeg,image/png,image/gif,image/webp" multiple hidden>
+        </div>
+      </div>
+
+      <div class="drop" id="drop">
+        <strong>拖入图片即可上传到 DeepSeek Files</strong>
+        <span>JPEG / PNG / GIF / WebP，单张不超过 64 MiB</span>
+      </div>
+
+      <div class="notice" id="notice" hidden></div>
+      <div class="grid" id="images"></div>
+      <div class="empty" id="empty" hidden>
+        <strong>还没有记录到图片</strong>
+        <span>在 Codex 里发送图片后，这里会出现外置记录。</span>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>服务仅监听 127.0.0.1</span>
+    <span id="paths"></span>
+  </footer>
+
+  <script src="/app.js" defer></script>
+</body>
+</html>
